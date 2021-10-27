@@ -30,6 +30,7 @@ public class Main {
                 "Pos Indonesia", "Joko",
                 "DayeuhKolot", "4", 24000.0);
 
+        //Memanggil Data Asuransi+Dropship dan Asuransi
         for (DataPengirim data:dataPengirims
              ) {
 
