@@ -69,6 +69,5 @@ public class Main {
         System.out.println("Alamat Penerima : " +data2.getAlamatPenerima());
         System.out.println("");
 
-
     }
 }
