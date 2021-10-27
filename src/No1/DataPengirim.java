@@ -11,6 +11,7 @@ public class DataPengirim {
     private double ongkosKirim;
     private double nominalAsuransi;
 
+    //Data Normal Dan Data Dropshiper
     public DataPengirim(String namaPengirim, String alamatPengirim, String noResi, String namaEkpedisi, String namaPenerima, String alamatPenerima, String noTransaksi, double ongkosKirim) {
         this.namaPengirim = namaPengirim;
         this.alamatPengirim = alamatPengirim;
