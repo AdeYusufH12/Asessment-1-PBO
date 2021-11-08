@@ -1,73 +1,27 @@
 package No1;
 
-import java.util.ArrayList;
-
 public class Main {
     public static void main(String[] args) {
-        ArrayList<DataPengirim> dataPengirims = new ArrayList<>();
+        DataPengirim dataUtama = new DataPengirim("3", "N0004", "Pos Indonesia", 23000, "Eiger", "Bandung Kopo", "Bambang", "DayeuhKolot");
+        DataPengirim dataAsuransi = new DataPengirim("2","N0003","J&T",21000,"Eiger","Bandung Kopo","Tini","DayeuhKolot",40000);
+        DataPengirim dataDropshipper = new DataPengirim("4","N0002","siCepat",24000,"Eiger","Bandung Kopo","Dropship2","Pontianak","Joko","DayeuhKolot","yes");
+        DataPengirim dataAsuransiDropshipper = new DataPengirim("1","N0001","JNE",21000,"Eiger","Bandung Kopo","Dropship1","Surabaya","Bejo","DayeuhKolot",40000,"yes");
 
-        //Data Asuransi + Dropship
-        dataPengirims.add(new DataPengirim("Dropship1",
-                "Surabaya", "N0001",
-                "JNE", "Bejo",
-                "DayeuhKolot", "1", 21000.0, 40000.0));
+        //Asuransi + Dropship
+        System.out.println("Asuransi + Dropshipper");
+        dataAsuransiDropshipper.Output();
 
-        //Data Asuransi
-        dataPengirims.add(new DataPengirim("Eigher",
-                "Bandung Kopo", "N0003",
-                "J&T", "Tini",
-                "DayeuhKolot", "2", 16000.0,40000.0));
+        //Asuransi
+        System.out.println("Asuransi");
+        dataAsuransi.Output();
 
-        //Data Normal
-        DataPengirim data1 = new DataPengirim("Eigher",
-                "Bandung Kopo", "N0004",
-                "Pos Indonesia", "Bambang",
-                "DayeuhKolot", "3", 23000.0);
+        //Utama/Normal
+        System.out.println("Utama");
+        dataUtama.Output();
 
-        //Data Dropship
-        DataPengirim data2 = new DataPengirim("Dropship2",
-                "Pontianak", "N0002",
-                "Pos Indonesia", "Joko",
-                "DayeuhKolot", "4", 24000.0);
-
-        //Memanggil Data Asuransi+Dropship dan Asuransi
-        for (DataPengirim data:dataPengirims
-             ) {
-
-            System.out.println("No Transaksi : " +data.getNoTransaksi());
-            System.out.println("No resi : " +data.getNoResi());
-            System.out.println("Nama Ekpedisi : " +data.getNamaEkpedisi());
-            System.out.println("Ongkos Kirim : " +data.getOngkosKirim());
-            System.out.println("Nama Pengirim : " +data.getNamaPengirim());
-            System.out.println("Alamat Pengirim : " +data.getAlamatPengirim());
-            System.out.println("Nama Penerima : " +data.getNamaPenerima());
-            System.out.println("Alamat Penerima : " +data.getAlamatPenerima());
-            System.out.println("Nominal Asuransi : " +data.getNominalAsuransi());
-            System.out.println("");
-
-        }
-
-        //Memanggil Data Normal
-        System.out.println("No Transaksi : " +data1.getNoTransaksi());
-        System.out.println("No resi : " +data1.getNoResi());
-        System.out.println("Nama Ekpedisi : " +data1.getNamaEkpedisi());
-        System.out.println("Ongkos Kirim : " +data1.getOngkosKirim());
-        System.out.println("Nama Pengirim : " +data1.getNamaPengirim());
-        System.out.println("Alamat Pengirim : " +data1.getAlamatPengirim());
-        System.out.println("Nama Penerima : " +data1.getNamaPenerima());
-        System.out.println("Alamat Penerima : " +data1.getAlamatPenerima());
+        //Dropship
+        System.out.println("Dropshipper");
+        dataDropshipper.Output();
         System.out.println("");
-
-        //Memanggil Data Dropshiper
-        System.out.println("No Transaksi : " +data2.getNoTransaksi());
-        System.out.println("No resi : " +data2.getNoResi());
-        System.out.println("Nama Ekpedisi : " +data2.getNamaEkpedisi());
-        System.out.println("Ongkos Kirim : " +data2.getOngkosKirim());
-        System.out.println("Nama Pengirim : " +data2.getNamaPengirim());
-        System.out.println("Alamat Pengirim : " +data2.getAlamatPengirim());
-        System.out.println("Nama Penerima : " +data2.getNamaPenerima());
-        System.out.println("Alamat Penerima : " +data2.getAlamatPenerima());
-        System.out.println("");
-
     }
 }
