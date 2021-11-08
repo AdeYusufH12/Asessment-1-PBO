@@ -1,74 +1,104 @@
 package No1;
 
 public class DataPengirim {
-    private String namaPengirim;
-    private String alamatPengirim;
-    private String noResi;
-    private String namaEkpedisi;
-    private String namaPenerima;
-    private String alamatPenerima;
-    private String noTransaksi;
+    private String namaPenjual;
+    private String alamatPenjual;
+    private String namaDropshipper;
+    private String namaPembeli;
+    private String alamatPembeli;
+    private String alamatDropshipper;
+    private String statDropshipper;
     private double ongkosKirim;
-    private double nominalAsuransi;
+    private String namaEkspedisi;
+    private String noTransaksi;
+    private  String resi;
+    private double asuransi ;
 
-    //Data Normal Dan Data Dropshiper
-    public DataPengirim(String namaPengirim, String alamatPengirim, String noResi, String namaEkpedisi, String namaPenerima, String alamatPenerima, String noTransaksi, double ongkosKirim) {
-        this.namaPengirim = namaPengirim;
-        this.alamatPengirim = alamatPengirim;
-        this.noResi = noResi;
-        this.namaEkpedisi = namaEkpedisi;
-        this.namaPenerima = namaPenerima;
-        this.alamatPenerima = alamatPenerima;
+    //Data utama
+    public DataPengirim(String noTransaksi,String resi, String namaEkspedisi, double ongkosKirim, String namaPenjual, String alamatPenjual, String namaPembeli,String alamatPembeli){
         this.noTransaksi = noTransaksi;
+        this.resi = resi;
+        this.namaEkspedisi = namaEkspedisi;
         this.ongkosKirim = ongkosKirim;
+        this.namaPenjual = namaPenjual;
+        this.alamatPenjual = alamatPenjual;
+        this.namaPembeli = namaPembeli;
+        this.alamatPembeli = alamatPembeli;
     }
 
-    //Data AsuransiDropship dan Data Asuransi
-    public DataPengirim(String namaPengirim, String alamatPengirim, String noResi, String namaEkpedisi, String namaPenerima, String alamatPenerima, String noTransaksi, double ongkosKirim, double nominalAsuransi) {
-        this.namaPengirim = namaPengirim;
-        this.alamatPengirim = alamatPengirim;
-        this.noResi = noResi;
-        this.namaEkpedisi = namaEkpedisi;
-        this.namaPenerima = namaPenerima;
-        this.alamatPenerima = alamatPenerima;
+    //Data utama + Data asuransi
+    public DataPengirim(String noTransaksi,String resi, String namaEkspedisi, double ongkosKirim, String namaPenjual, String alamatPenjual, String namaPembeli,String alamatPembeli, double asuransi){
         this.noTransaksi = noTransaksi;
+        this.resi = resi;
+        this.namaEkspedisi = namaEkspedisi;
         this.ongkosKirim = ongkosKirim;
-        this.nominalAsuransi = nominalAsuransi;
+        this.namaPenjual = namaPenjual;
+        this.alamatPenjual = alamatPenjual;
+        this.namaPembeli = namaPembeli;
+        this.alamatPembeli = alamatPembeli;
+        this.asuransi = asuransi;
     }
 
-    public String getNamaPengirim() {
-        return namaPengirim;
+    //Data Utama + Dropshipper
+    public DataPengirim(String noTransaksi,String resi, String namaEkspedisi, double ongkosKirim, String namaPenjual,String alamatPenjual, String namaDropshipper, String alamatDropshipper, String namaPembeli, String alamatPembeli, String statDropshipper){
+        this.noTransaksi = noTransaksi;
+        this.resi = resi;
+        this.namaEkspedisi = namaEkspedisi;
+        this.ongkosKirim = ongkosKirim;
+        this.namaPenjual = namaPenjual;
+        this.alamatPenjual = alamatPenjual;
+        this.namaDropshipper = namaDropshipper;
+        this.alamatDropshipper = alamatDropshipper;
+        this.namaPembeli = namaPembeli;
+        this.alamatPembeli = alamatPembeli;
+        this.statDropshipper = statDropshipper;
     }
 
-    public String getAlamatPengirim() {
-        return alamatPengirim;
+    //Data utama + asuransi + dropshipper
+    public DataPengirim(String noTransaksi,String resi, String namaEkspedisi, double ongkosKirim, String namaPenjual,String alamatPenjual, String namaDropshipper, String alamatDropshipper, String namaPembeli, String alamatPembeli, double asuransi, String statDropshipper){
+        this.noTransaksi = noTransaksi;
+        this.resi = resi;
+        this.namaEkspedisi = namaEkspedisi;
+        this.ongkosKirim = ongkosKirim;
+        this.namaPenjual = namaPenjual;
+        this.alamatPenjual = alamatPenjual;
+        this.namaDropshipper = namaDropshipper;
+        this.alamatDropshipper = alamatDropshipper;
+        this.namaPembeli = namaPembeli;
+        this.alamatPembeli = alamatPembeli;
+        this.asuransi = asuransi;
+        this.statDropshipper = statDropshipper;
     }
 
-    public String getNoResi() {
-        return noResi;
-    }
-
-    public String getNamaEkpedisi() {
-        return namaEkpedisi;
-    }
-
-    public String getNamaPenerima() {
-        return namaPenerima;
-    }
-
-    public String getAlamatPenerima() {
-        return alamatPenerima;
-    }
-
-    public String getNoTransaksi() {
-        return noTransaksi;
-    }
-
-    public double getOngkosKirim() {
-        return ongkosKirim;
-    }
-
-    public double getNominalAsuransi() {
-        return nominalAsuransi;
+    public void Output(){
+        System.out.println("No Transaksi : " + noTransaksi);
+        System.out.println("No resi : " + resi);
+        System.out.println("Nama Ekspedisi :" + namaEkspedisi);
+        if ((ongkosKirim > 20000 && asuransi > 0) && statDropshipper == null){
+            ongkosKirim -= 5000;
+        }
+        System.out.println("Ongkos Kirim : " + ongkosKirim);
+        switch (String.valueOf(namaDropshipper)){
+            case "null" :
+                System.out.println("Nama Pengirim : " + namaPenjual);
+                break;
+            default :
+                System.out.println("Nama Pengirim : " + namaDropshipper);
+                break;
+        }
+        switch (String.valueOf(alamatDropshipper)){
+            case "null" :
+                System.out.println("Alamat Pengirim : " + alamatPenjual);
+                break;
+            default:
+                System.out.println("Alamat Pengirim : " + alamatDropshipper);
+                break;
+        }
+        System.out.println("Nama Penerima : " + namaPembeli);
+        System.out.println("Alamat Penerima : " + alamatPembeli);
+        if (asuransi > 0){
+            System.out.println("Nominal Asuransi : " + asuransi);
+        }
+        System.out.println("");
     }
 }
